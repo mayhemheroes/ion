@@ -17,8 +17,12 @@ pub use self::{
 };
 
 #[cfg(fuzzing)]
+#[allow(missing_docs)]
 pub mod fuzzing {
     use super::*;
+    use crate::builtins::BuiltinMap;
 
-    pub fn statement_parse(data: &str) { statement::parse::parse(data); }
+    pub fn statement_parse(data: &str, map: &BuiltinMap) {
+        let _ = statement::parse_fuzz(data, map);
+    }
 }

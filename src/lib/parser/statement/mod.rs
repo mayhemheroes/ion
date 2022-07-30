@@ -3,6 +3,9 @@ mod functions;
 mod parse;
 mod splitter;
 
+#[cfg(fuzzing)]
+pub use parse::parse as parse_fuzz;
+
 pub use self::{
     parse::parse,
     splitter::{StatementSplitter, StatementVariant},
