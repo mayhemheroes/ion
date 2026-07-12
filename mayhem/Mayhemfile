@@ -1,0 +1,6 @@
+project: ion
+target: parser
+
+cmds:
+  - cmd: /mayhem/parser
+    libfuzzer: true
